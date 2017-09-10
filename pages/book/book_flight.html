@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css" crossorigin="anonymous"/>
+      <title>Arrowplane - Book Flight</title>
+      <link rel="shortcut icon" type="image/jpg" href="../../images/arrow_fav.jpg" />
+      <link rel="stylesheet" href="../../custom/custom.css"/>
+      <link rel="stylesheet" href="../../bootstrap/datepicker/css/bootstrap-datepicker.css"/>
+      <link rel="stylesheet" href="../../bootstrap/datepicker/css/bootstrap-datepicker.standalone.css"></link>
+
+      <link rel="stylesheet" href="../../custom/floatlabels.css"></link>
+      <style>
+         .parallax {
+         background-image: url('../../images/book_flight.jpg');
+         min-height: 500px;
+         opacity: 0.7;
+         background-attachment: fixed;
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: 1300px 710px;
+         }
+         /* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
+      </style>
+   </head>
+   <body>
+      <div class="news_ticker" id="news_updates">
+         <div class='ticker_heading center'>
+            Good news: We've been just launched!
+         </div>
+      </div>
+      <div id='grey_divider'></div>
+      <div class="pos-f-t">
+      </div>
+      <div class='parallax shadowfy'>
+      <img src="../../images/ap_logo_slogan_right.png" height="100" width="300"/>
+      <nav >
+         <div class="container-fluid">
+            <ul id="nav_main" class="nav center">
+               <a href="../../index.html" class = 'transition'>
+                  <li>
+                     Home
+                  </li>
+               </a>
+               <li id = 'homer' data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" onclick='toggler_collapser()' class='active' >
+                  <!--<a onmouseout='test()' onmouseover='test()' id = "home-men" class = "text-white active" href="#" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="true" aria-label="Toggle navigation">Home</a>-->
+                  Book
+               </li>
+               <a href="../roles/manage.html" class='transition'>
+                  <li>
+                     Manage
+                  </li>
+               </a>
+               <a href="../destinations/available.html" class='transition'>
+                  <li>
+                     Destinations
+                  </li>
+               </a>
+               <li id ='help_button' onclick='help_clicked()'>
+                  Help
+               </li>
+               <a href="../about/about_us.html" class='transition'>
+                  <li>
+                     About us
+                  </li>
+               </a>
+            </ul>
+            <div id= 'collapse_menu' class="collapse book-menu">
+               <div class="card-group">
+                  <div class="card bg-light mb-3" style="max-width: 20rem;">
+                     <div class="book-card-header" style=" margin-left: 30px;">
+                        <h5 class="card-title">Booking</h5>
+                        <img src="../../images/nav_bar_icons/black-plane.png" height="40" width="40"/>
+                     </div>
+                     <div class="card-body">
+                        <ul>
+                           <a class='transition' href='../book/book_flight.html'>
+                              <li>
+                                 Book a flight
+                              </li>
+                           </a>
+                           <a class='transition' href='../book/manage_booking.html'>
+                              <li>
+                                 Manage a booking
+                              </li>
+                           </a>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="card bg-light mb-3" style="max-width: 20rem;">
+                     <div class="book-card-header" style="margin-left: 30px;">
+                        <h5 class="card-title">Fares</h5>
+                        <img src="../../images/nav_bar_icons/wallet.png" height="40" width="40"/>
+                     </div>
+                     <div class="card-body">
+                        <ul>
+                           <a class='transition' href='../book/offers.html'>
+                              <li>
+                                 Special offers
+                              </li>
+                           </a>
+                           <a class='transition' href='../book/fare_by_class.html'>
+                              <li>
+                                 View fare by class
+                              </li>
+                           </a>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="card bg-light mb-3" style="max-width: 20rem;">
+                     <div class="book-card-header" style=" margin-left: 30px;">
+                        <h5 class="card-title">Destinations</h5>
+                        <img src="../../images/nav_bar_icons/flight.png" height="40" width="40"/>
+                     </div>
+                     <div class="card-body">
+                        <ul>
+                           <a class='transition' href='../destinations/available.html'>
+                              <li>
+                                 View available destinations
+                              </li>
+                           </a>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <br/>
+      </nav>
+      </div> <!--End of nav and parallax-->
+      <div class='jumbotron'>
+ 
+
+         <h1>Book Flight</h1>
+         <div class='content'>
+
+         <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Return')" id="defaultOpen" style="min-width: 50%">Return</button>
+            <button class="tablinks" onclick="openTab(event, 'OneWay')">One Way</button>
+         </div>
+
+         <div id="Return" class="tabcontent">
+         <br/>
+           <h4 class="red-heading">Departure details</h4>
+            <br/>
+            <form>
+            <div name="Departure">
+               <div class="input-group" style='max-width: 60%; margin-right: 20px;'>
+                  <span class="input-group-addon" id="basic-addon1">From: </span>
+                  <select class="form-control" id="return_book_from">
+                  <option>Lahore</option>
+                  <option>Karachi</option>
+                  <option>Islamabad</option>
+                  <option>Los Angeles</option>
+                  <option>Paris</option>
+                  </select>
+               </div>
+
+               <br/> 
+
+               <h4 class='red-heading'></h4>
+
+               <div class="input-group date" style="max-width: 60%;" data-provide="datepicker" >
+                  <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-th">Departure Date: </span>
+                  </div>
+                  <input type="text"  id = "return_date" class="form-control"/>
+                  </div>
+               </div>
+
+               <br/>
+
+               <div class="input-group" style='max-width: 60%; margin-right: 20px;'>
+                  <span class="input-group-addon" id="basic-addon1">Class: </span>
+                  <select class="form-control" id="return_class1">
+                  <option>Economy</option>
+                  <option>Business</option>
+                  <option>First Class</option>
+                  </select>
+               </div>
+
+               <hr>
+
+               <h4 class='red-heading'>Arrival details</h4>
+
+               <br/>
+               <div class="input-group" style="max-width: 60%;">
+                  <span class="input-group-addon" id="basic-addon1">Destination: </span>
+                  <select class="form-control" id="book_destination">
+                  <option>Lahore</option>
+                  <option>Karachi</option>
+                  <option>Islamabad</option>
+                  <option>Los Angeles</option>
+                  <option>Paris</option>
+                  </select>
+               </div>
+
+               <br/>
+
+               <div class="input-group date" style="max-width: 60%;" data-provide="datepicker" >
+                  <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-th">Return Date: </span>
+                  </div>
+                  <input type="text"  id = "" class="form-control"/>
+               </div>
+
+               <br/>
+               <div class="input-group" style='max-width: 60%; margin-right: 20px;'>
+                  <span class="input-group-addon" id="basic-addon1">Class: </span>
+                  <select class="form-control" id="return_class2">
+                  <option>Economy</option>
+                  <option>Business</option>
+                  <option>First Class</option>
+                  </select>
+               </div>
+
+                <br/>
+               <hr/>
+               <br/>
+               <h4 class='red-heading'>Passengers</h4>
+               
+               <br/><br/>
+
+               <div class="form-group float-label-control" style="max-width: 50%;">
+                  <label for="">Number of Passengers</label>
+                  <input type="text" class="form-control" placeholder="Number of Passengers">
+               </div>
+               <br/><br/>
+
+            <button type="button" class="btn btn-danger">Check Availability</button>
+
+               </div>
+
+               
+
+
+
+            </form>
+
+         <div id="OneWay" class="tabcontent">
+           <br/>
+           <h4 class="red-heading">Departure details</h4>
+            <br/>
+            <form>
+            <div name="Departure">
+               <div class="input-group" style='max-width: 60%; margin-right: 20px;'>
+                  <span class="input-group-addon" id="basic-addon1">From: </span>
+                  <select class="form-control" id="return_book_from">
+                  <option>Lahore</option>
+                  <option>Karachi</option>
+                  <option>Islamabad</option>
+                  <option>Los Angeles</option>
+                  <option>Paris</option>
+                  </select>
+               </div>
+
+               <br/> 
+
+               <h4 class='red-heading'></h4>
+
+               <div class="input-group date" style="max-width: 60%;" data-provide="datepicker" >
+                  <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-th">Departure Date: </span>
+                  </div>
+                  <input type="text"  id = "return_date" class="form-control"/>
+                  </div>
+               </div>
+
+               <br/>
+
+               <div class="input-group" style='max-width: 60%; margin-right: 20px;'>
+                  <span class="input-group-addon" id="basic-addon1">Class: </span>
+                  <select class="form-control" id="return_class1">
+                  <option>Economy</option>
+                  <option>Business</option>
+                  <option>First Class</option>
+                  </select>
+               </div>
+
+               <br/>
+               <hr/>
+               <br/>
+               <h4 class='red-heading'>Passengers</h4>
+
+               <br/><br/>
+
+               <div class="form-group float-label-control" style="max-width: 50%;">
+                  <label for="">Number of Passengers</label>
+                  <input type="text" class="form-control" placeholder="Number of Passengers">
+               </div>
+
+            <br/>
+            <br/>
+
+            <button type="button" class="btn btn-danger">Check Availability</button>
+
+         </div>
+
+
+
+<script>
+function openTab(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+            
+         </div>
+      </div>
+      <div class="foote">
+         <div class="footer-col" id="footer_help">
+            <h5>Need Our Help?</h5>
+            <br/>
+            <small>You can contact us on the following</small>
+            <br/>
+            <br/>
+            <a href='http://facebook.com/ansnadeem'><img class = 'social-icon' src='../../images/footer/facebook.png' alt='facebook' height='30' width='30'/></a>
+            <a href='http://twitter.com/ansnaddeem'><img class = 'social-icon' src='../../images/footer/twitter.png' alt='twitter' height='30' width='30'/></a>
+            <a href='http://instagram.com/ansnadeem'><img class = 'social-icon' src='../../images/footer/instagram.png' alt='instagram' height='30' width='30'/></a>
+            <br/>
+            <br/>
+            <small>Or you can send us an email at: ans_nadeem@outlook.com</small>
+         </div>
+         <div class='footer-col'>
+            <h5>About us</h5>
+            <br/>
+            <small>
+            Arrowplane, all rights reserved, is an airline which is devoted to serve you. We are devoted to making the skies friendlier for you. We, here at Arrowplane are obliged to do everything to leave our travellers feel comfortable and relaxed during our flights at the most cheap rates.
+            </small>
+            <br/>
+         </div>
+         <div class='footer-col'>
+            <h5>Links</h5>
+            <br/>
+            <small>
+            <a class='transition' href='../book/book_flight.html'>New booking</a><br/>
+            <a class='transition' href='../book/manage_booking.html'>Manage Booking</a><br/>
+            <a class='transition' href='../destinations/available.html'>View Destinations</a><br/>
+            <a class='transition' href='../about/about_us.html'>About Us</a><br/>
+            </small>
+         </div>
+      </div>
+      <script src="../../jQuery/jquery-3.2.1.js" crossorigin="anonymous"></script>
+      <script src="../../custom/custom.js"></script>
+      <script src="../../popper/popper.js" crossorigin="anonymous"></script>
+      <script src="../../bootstrap/js/bootstrap.js" crossorigin="anonymous"></script>
+      <script src="../../bootstrap/datepicker/js/bootstrap-datepicker.js"></script>
+      
+      <script src="../../custom/floatlabels.js"></script>
+   </body>
+</html>
