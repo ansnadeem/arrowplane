@@ -6,12 +6,16 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css" crossorigin="anonymous"/>
-      <title>Arrowplane - Destinations</title>
+      <title>Arrowplane - Flight Itinerary</title>
       <link rel="shortcut icon" type="image/jpg" href="../../images/arrow_fav.jpg" />
       <link rel="stylesheet" href="../../custom/custom.css"/>
+      <link rel="stylesheet" href="../../bootstrap/datepicker/css/bootstrap-datepicker.css"/>
+      <link rel="stylesheet" href="../../bootstrap/datepicker/css/bootstrap-datepicker.standalone.css"></link>
+
+      <link rel="stylesheet" href="../../custom/floatlabels.css"></link>
       <style>
          .parallax {
-         background-image: url('../../images/destinations.png');
+         background-image: url('../../images/itinerary.jpg');
          min-height: 500px;
          opacity: 0.7;
          background-attachment: fixed;
@@ -19,6 +23,40 @@
          background-repeat: no-repeat;
          background-size: 1300px 710px;
          }
+         /* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
       </style>
    </head>
    <body>
@@ -40,7 +78,7 @@
                      Home
                   </li>
                </a>
-               <li id = 'homer' data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" onclick='toggler_collapser()' >
+               <li id = 'homer' data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" onclick='toggler_collapser()' class='active' >
                   <!--<a onmouseout='test()' onmouseover='test()' id = "home-men" class = "text-white active" href="#" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="true" aria-label="Toggle navigation">Home</a>-->
                   Book
                </li>
@@ -50,7 +88,7 @@
                   </li>
                </a>
                <a href="../destinations/available.html" class='transition'>
-                  <li class='active'>
+                  <li>
                      Destinations
                   </li>
                </a>
@@ -126,15 +164,42 @@
       </nav>
       </div> <!--End of nav and parallax-->
       <div class='jumbotron'>
-         <h1>Destinations</h1>
+ 
+
+         <h1>Flight Itinerary</h1>
          <div class='content'>
-            <p>We are currently providing our services in the following countries with an aim to extend them to every point on the globe!
-            </p>
-            <br/>
-            <iframe src="https://www.google.com/maps/d/embed?mid=13J4LhT4Yh8PLoXp_nHhsB3H1-nA" style="height: 500px; width: 100%"></iframe>
+
+         <b>Class: </b> Economy<br/><br/>
+         <b>Seats: </b> 2<br/><br/>
+         <b>Departure From: </b> Lahore<br/><br/>
+         <b>Departure Date: </b> 2<br/><br/>
+
+         <b>Type: </b> Return ticket<br/><br/>
+         <b>Arrival: </b> Karachi<br/><br/>
+         <b>Return Date: </b> <br/><br/>
+               <div class="form-group float-label-control">
+                  <label for="">First Name</label>
+                  <input type="text" class="form-control" placeholder="First Name">
+              </div>
+<br/>
+               <div class="form-group float-label-control">
+                  <label for="">Last Name</label>
+                  <input type="text" class="form-control" placeholder="Last Name">
+              </div>
+<br/>
+               <div class="form-group float-label-control">
+                  <label for="">Email</label>
+                  <input type="text" class="form-control" placeholder="Email">
+              </div>
+              <br/>
+            <a href="buy_ticket.html"><button type="button" class="btn btn-danger">Approve Itinerary</button></a>
+
+         </div>
+         </div>
 
 
 
+            
          </div>
       </div>
       <div class="foote">
@@ -174,6 +239,8 @@
       <script src="../../custom/custom.js"></script>
       <script src="../../popper/popper.js" crossorigin="anonymous"></script>
       <script src="../../bootstrap/js/bootstrap.js" crossorigin="anonymous"></script>
+      <script src="../../bootstrap/datepicker/js/bootstrap-datepicker.js"></script>
       
+      <script src="../../custom/floatlabels.js"></script>
    </body>
 </html>

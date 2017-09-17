@@ -6,9 +6,10 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css" crossorigin="anonymous"/>
-      <title>Arrowplane - About Us</title>
+      <title>Arrowplane - Login to Manage</title>
       <link rel="shortcut icon" type="image/jpg" href="../../images/arrow_fav.jpg" />
       <link rel="stylesheet" href="../../custom/custom.css"/>
+      <link rel="stylesheet" href="../../custom/floatlabels.css"/>
       <style>
          .parallax {
          background-image: url('../../images/roles.jpeg');
@@ -36,7 +37,7 @@
          <div class="container-fluid">
             <ul id="nav_main" class="nav center">
                <a href="../../index.html" class = 'transition'>
-                  <li class='active'>
+                  <li>
                      Home
                   </li>
                </a>
@@ -45,7 +46,7 @@
                   Book
                </li>
                <a href="../roles/manage.html" class='transition'>
-                  <li>
+                  <li class='active'>
                      Manage
                   </li>
                </a>
@@ -97,9 +98,9 @@
                                  Special offers
                               </li>
                            </a>
-                           <a class='transition' href='../book/fare_by_class.html'>
+<a class='transition' href='../book/classes.html'>
                               <li>
-                                 View fare by class
+                                 Classes
                               </li>
                            </a>
                         </ul>
@@ -126,20 +127,32 @@
       </nav>
       </div> <!--End of nav and parallax-->
       <div class='jumbotron'>
-         <h1>About Us</h1>
+         <h1>Login to Manage</h1>
          <div class='content'>
-            <p>Arrowplane, all rights reserved, is an airline which is devoted to serve you. We are devoted to making the skies friendlier for you. We, here at Arrowplane are obliged to do everything to leave our travellers feel comfortable and relaxed during our flights at the most cheap rates.
+            <p>
+            Login to continue managing content
+
+            Since our back-end is underconstruction, you can still view the pages and functionalities that can be performed by the different roles
+
             </p>
             <br/>
-            <p>
-            We are an airline that started off in 2017 with only one plane and now with a line-up of total 200 planes with more than 5 destinations.
-            </p>
+            <form role="form">
+              <div class="form-group float-label-control">
+                  <label for="">Username</label>
+                  <input type="text" class="form-control" placeholder="Username">
+              </div>
+            <br/>
+               <div class="form-group float-label-control">
+                  <label for="">Username</label>
+                  <input type="text" class="form-control" placeholder="First Name">
+              </div>
+              <br/>
 
-            <p>
-            The story of a firm whose success story is intertwined with the incredible development of Pakistan could be nothing but fascinating. Against a backdrop of regional unrest and volatile global economies, progress has been maintained at a rapid pace in every year of Arrowplane' and dnata's existence. A combination of business acumen, ambition and savvy investment set in motion a series of events which have propelled Arrowplane and dnata to amongst the most respected and recognised brands in the world.
-            </p>
-
-
+              <a href="admin.html"><button type="button" class='btn btn-default'>Login as Arrowplane Admin</button></a>
+              
+              <a href="manager.html"><button type="button" class='btn btn-danger'>Login as Arrowplane Manager</button></a>
+            </form>
+<br/>
 
          </div>
       </div>
@@ -180,6 +193,7 @@
       <script src="../../custom/custom.js"></script>
       <script src="../../popper/popper.js" crossorigin="anonymous"></script>
       <script src="../../bootstrap/js/bootstrap.js" crossorigin="anonymous"></script>
+      <script src="../../custom/floatlabels.js"></script>
       
    </body>
 </html>

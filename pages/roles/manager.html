@@ -6,12 +6,13 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css" crossorigin="anonymous"/>
-      <title>Arrowplane - Destinations</title>
+      <title>Arrowplane - Manager panel</title>
       <link rel="shortcut icon" type="image/jpg" href="../../images/arrow_fav.jpg" />
       <link rel="stylesheet" href="../../custom/custom.css"/>
+      <link rel="stylesheet" href="../../custom/floatlabels.css"/>
       <style>
          .parallax {
-         background-image: url('../../images/destinations.png');
+         background-image: url('../../images/roles.jpeg');
          min-height: 500px;
          opacity: 0.7;
          background-attachment: fixed;
@@ -19,6 +20,7 @@
          background-repeat: no-repeat;
          background-size: 1300px 710px;
          }
+         
       </style>
    </head>
    <body>
@@ -27,7 +29,22 @@
             Good news: We've been just launched!
          </div>
       </div>
-      <div id='grey_divider'></div>
+      <div id='grey_divider'><small id='login_text'>You are logged in as manager.  <div class="btn-group">
+         <button class="btn btn-danger btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right: 30px; margin-top: 1px">
+         View Actions
+         </button>
+         <div class="dropdown-menu shadowfy actions-dropdown">
+         <small><a class="dropdown-item" href="manager.html">Manager panel</a>
+         <div class="dropdown-divider"></div>
+         <a class="dropdown-item" href="profile.html">View Profile</a>
+         <a class="dropdown-item" href="manage.html">Logout</a>
+         </small>
+         </div>
+         </div>
+         </small>
+
+
+      </div>
       <div class="pos-f-t">
       </div>
       <div class='parallax shadowfy'>
@@ -50,7 +67,7 @@
                   </li>
                </a>
                <a href="../destinations/available.html" class='transition'>
-                  <li class='active'>
+                  <li>
                      Destinations
                   </li>
                </a>
@@ -126,13 +143,92 @@
       </nav>
       </div> <!--End of nav and parallax-->
       <div class='jumbotron'>
-         <h1>Destinations</h1>
+         <h1>Manager Panel</h1>
          <div class='content'>
-            <p>We are currently providing our services in the following countries with an aim to extend them to every point on the globe!
+            <p>
+            Here are the different available actions you can perform manager.
             </p>
             <br/>
-            <iframe src="https://www.google.com/maps/d/embed?mid=13J4LhT4Yh8PLoXp_nHhsB3H1-nA" style="height: 500px; width: 100%"></iframe>
+            
+<br/>
 
+<table class="table table-hover">
+    <thead>
+      <tr style='background-color: grey; color: white;'>
+        <th>Username</th>
+        <th>Update Type</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ansnadeem</td>
+        <td>Price</td>
+        <td>
+            <button class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">Click to View</button>
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+             <div class='modal-header'>
+            <div class="modal-title red-heading">Update Details</div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+            <div class="modal-body">
+            <p><b>Update By:</b> ansnadeem<br/>
+            <b>Type:</b> Price update<br/>
+            <b>Class:</b> Economy<br/>
+            <b>Departure:</b> Lahore<br/>
+            <b>Destination:</b> Karachi<br/>
+   <br/>
+            <b>New Price:</b> Rs. 20,000
+            </p>
+            </div>
+               <div class="modal-footer">
+               <button type="button" class="btn btn-primary">Accept Update</button>
+               <button type="button" class="btn btn-danger">Reject Update</button>
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               </div>
+            </div>
+  </div>
+</div></td>
+      </tr>
+      <tr>
+        <td>testuser</td>
+        <td>Seat Addition</td>
+        <td>
+            <button class="btn btn-danger" data-toggle="modal2" data-target=".bd-example-modal-lg">Click to View</button>
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+             <div class='modal-header'>
+            <div class="modal-title red-heading">Update Details</div>
+            <button type="button" class="close" data-dismiss="modal2" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+            <div class="modal-body">
+            <p><b>Update By:</b> testuser<br/>
+            <b>Type:</b> Seat addition<br/>
+            <b>Class:</b> Economy<br/>
+            <b>Departure:</b> Lahore<br/>
+            <b>Destination:</b> Karachi<br/>
+   <br/>
+            </p>
+            </div>
+               <div class="modal-footer">
+               <button type="button" class="btn btn-primary">Accept Update</button>
+               <button type="button" class="btn btn-danger">Reject Update</button>
+               <button type="button" class="btn btn-secondary" data-dismiss="modal2">Close</button>
+               </div>
+            </div></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+         </div>
 
 
          </div>
@@ -174,6 +270,7 @@
       <script src="../../custom/custom.js"></script>
       <script src="../../popper/popper.js" crossorigin="anonymous"></script>
       <script src="../../bootstrap/js/bootstrap.js" crossorigin="anonymous"></script>
+      <script src="../../custom/floatlabels.js"></script>
       
    </body>
 </html>

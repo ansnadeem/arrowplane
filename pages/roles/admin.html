@@ -6,12 +6,13 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css" crossorigin="anonymous"/>
-      <title>Arrowplane - Destinations</title>
+      <title>Arrowplane - Admin panel</title>
       <link rel="shortcut icon" type="image/jpg" href="../../images/arrow_fav.jpg" />
       <link rel="stylesheet" href="../../custom/custom.css"/>
+      <link rel="stylesheet" href="../../custom/floatlabels.css"/>
       <style>
          .parallax {
-         background-image: url('../../images/destinations.png');
+         background-image: url('../../images/roles.jpeg');
          min-height: 500px;
          opacity: 0.7;
          background-attachment: fixed;
@@ -19,6 +20,7 @@
          background-repeat: no-repeat;
          background-size: 1300px 710px;
          }
+         
       </style>
    </head>
    <body>
@@ -27,7 +29,22 @@
             Good news: We've been just launched!
          </div>
       </div>
-      <div id='grey_divider'></div>
+      <div id='grey_divider'><small id='login_text'>You are logged in as admin.  <div class="btn-group">
+         <button class="btn btn-danger btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right: 30px; margin-top: 1px">
+         View Actions
+         </button>
+         <div class="dropdown-menu shadowfy actions-dropdown">
+         <small><a class="dropdown-item" href="admin.html">Admin panel</a>
+         <div class="dropdown-divider"></div>
+         <a class="dropdown-item" href="profile.html">View Profile</a>
+         <a class="dropdown-item" href="manage.html">Logout</a>
+         </small>
+         </div>
+         </div>
+         </small>
+
+
+      </div>
       <div class="pos-f-t">
       </div>
       <div class='parallax shadowfy'>
@@ -50,7 +67,7 @@
                   </li>
                </a>
                <a href="../destinations/available.html" class='transition'>
-                  <li class='active'>
+                  <li>
                      Destinations
                   </li>
                </a>
@@ -126,17 +143,96 @@
       </nav>
       </div> <!--End of nav and parallax-->
       <div class='jumbotron'>
-         <h1>Destinations</h1>
+         <h1>Admin Panel</h1>
          <div class='content'>
-            <p>We are currently providing our services in the following countries with an aim to extend them to every point on the globe!
+            <p>
+            Here are the different available actions you can perform admin.
             </p>
             <br/>
-            <iframe src="https://www.google.com/maps/d/embed?mid=13J4LhT4Yh8PLoXp_nHhsB3H1-nA" style="height: 500px; width: 100%"></iframe>
+            <br/>
+            <h4 class="red-heading">Select a flight</h4>
+            <br/>
+            <div class="input-group" style='max-width: 60%; margin-right: 20px;'>
+                  <span class="input-group-addon" id="basic-addon1">Select Reference: </span>
+                  <select class="form-control" id="flight">
+                  <option>AP220</option>
+                  <option>AP221</option>
+                  <option>AP99</option>
+                  <option>AP230</option>
+                  </select>
+            </div>
+            <br/>
+            <hr/>
+            <br/>
+              <!--<div class="form-group float-label-control">
+                  <label for="">Total number of seats</label>
+                  <input type="text" class="form-control" placeholder="First Name">
+              </div>-->
+              <h4 class='red-heading'>Update Seats</h4><br/>
+              <b>Current number of seats: </b>100<br/>
+              <br/>
+             <button class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">Add Seats</button>
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+             <div class='modal-header'>
+            <div class="modal-title red-heading">Update Details</div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+            <div class="modal-body">
+            <p><b>Economy Seats:</b> 20<br/>
+            <b>Business Class Seats:</b> 40<br/>
+            <b>First Class Seats:</b> 40<br/>
+   <br/>
+   <hr/>
+   <h5 class='red-heading'>New seat</h5>
+   <br/>
+   <div class="input-group" style='max-width: 60%; margin-right: 20px;'>
+                  <span class="input-group-addon" id="basic-addon1">Select Class: </span>
+                  <select class="form-control" id="class_selector">
+                  <option>Economy</option>
+                  <option>Business</option>
+                  <option>First Class</option>
+                  </select>
+            </div>
+            </p>
+            </div>
+               <div class="modal-footer">
+               <button type="button" class="btn btn-danger">Add New Seat</button>
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               </div>
+               </div>
+               </div>
+            </div>
+            <br/>
+            <br/>
+            <hr/>
+            <br/>
+            <h4 class='red-heading'>Update Prices</h4>
+            <br/>
+            <div class="input-group" style='max-width: 60%; margin-right: 20px;'>
+                  <span class="input-group-addon" id="basic-addon1">Select Class: </span>
+                  <select class="form-control" id="class_selector">
+                  <option>Economy</option>
+                  <option>Business</option>
+                  <option>First Class</option>
+                  </select>
+            </div>
+            <br/>
+            <b>Price of the seat of selected class type: </b> Rs. 30,000
+            <br/>
+            <br/>
+            
+               <div class="form-group float-label-control">
+                  <label for="">Enter New Price (Rs)</label>
+                  <input type="text" class="form-control" placeholder="Enter New Price (Rs)">
+              </div>
 
-
-
+              <button type="button" class="btn btn-danger">Update Price</button>
          </div>
-      </div>
+   </div>
       <div class="foote">
          <div class="footer-col" id="footer_help">
             <h5>Need Our Help?</h5>
@@ -174,6 +270,7 @@
       <script src="../../custom/custom.js"></script>
       <script src="../../popper/popper.js" crossorigin="anonymous"></script>
       <script src="../../bootstrap/js/bootstrap.js" crossorigin="anonymous"></script>
+      <script src="../../custom/floatlabels.js"></script>
       
    </body>
 </html>
